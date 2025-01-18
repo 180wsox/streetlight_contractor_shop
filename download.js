@@ -5,6 +5,10 @@ function downloadPage() {
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = "placeholder.html";
+  link.addEventListener("click", () => {
+    console.log("Attempting Download...");
+    alert("Download Started... (this will enable offline viewing)");
+  });
   link.click();
 }
 

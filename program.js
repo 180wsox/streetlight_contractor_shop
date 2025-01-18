@@ -9,5 +9,5 @@ function downloadPage() {
 }
 
 //Examples below
-//Add to page: <button class="download-page">Download Webpage</button> 
+//Add to page: <button class="download-page">Use Offline</button> (the important bit is that the HTML element has the download-page class)
 //Add to page: document.querySelector(".download-page").addEventListener("click", downloadPage);

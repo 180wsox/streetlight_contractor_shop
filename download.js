@@ -1,15 +1,20 @@
 console.log("JavaScript initialised successfully.");
 function downloadPage() {
-  const htmlContent = document.documentElement.outerHTML; //Retrieve HTML content (full)
-  const blob = new Blob([htmlContent], { type: "text/html" }); //binary data (blob)
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "placeholder.html";
-  link.addEventListener("click", () => {
-    console.log("Attempting Download...");
-    alert("Download Started... (this will enable offline viewing)");
-  });
-  link.click();
+  try {
+    const htmlContent = document.documentElement.outerHTML; //Retrieve HTML content (full)
+    const blob = new Blob([htmlContent], { type: "text/html" }); //binary data (blob)
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "placeholder.html";
+    link.addEventListener("click", () => {
+      console.log("Attempting Download...");
+      alert("Download Started... (this will enable offline viewing)");
+    });
+    link.click();
+  } catch (error) {
+    console.error("Download failed because of ", error);
+    alert("Download failed; check in the browser console for more information.");
+  }
 }
 
 //Examples below

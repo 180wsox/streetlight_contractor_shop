@@ -1,3 +1,16 @@
+class User {
+
+  constructor(money, inventory) {
+    this.money = money;
+    this.inventory = [];
+  }
+
+  addStreetlight(streetlight) {
+    this.inventory.push(streetlight);
+  }
+  
+}
+
 class Streetlight {
   
   constructor(brand, model, type, wattage, lifespan, ballast) {
